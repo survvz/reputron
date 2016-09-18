@@ -26,8 +26,21 @@ class NegRep extends Command
 		 */
 		let action = (message, resolve, reject) =>
 		{
-			let userid = message.mentions.users.array()[0].id;
+			let userid = message.mentions.users.array()[0] ?
+				message.mentions.users.array()[0].id : undefined || message.author.id;
 			let text = message.content.match(this.command)[1];
+
+			// If user tries to rep themselves
+			if (userid == message.author.id)
+			{
+				// Mock user
+				message.channel.sendMessage("What kind of loser tries to give rep to themselves?")
+					.then(message =>
+					{
+						message.delete(5 * 1000);
+					});
+				return;
+			}
 
 			// Template for a reps object
 			let repsTemplate =
@@ -67,7 +80,7 @@ class NegRep extends Command
 				{
 					foundUser = true;
 
-					// Check message author has repped this person before
+					// Check if message author has repped this person before
 					let repped = false;
 					let reppedTime = 0;
 					user.reps.forEach( (key, index) =>
@@ -80,6 +93,7 @@ class NegRep extends Command
 						}
 					})
 
+					// Message author has repped this user within cooldown, notify and break
 					if (repped)
 					{
 						message.channel.sendMessage(

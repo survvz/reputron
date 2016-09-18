@@ -31,6 +31,7 @@ class Bot extends Client
 		// Register commands
 		this.commands.Register(new Command_AddRep());
 		this.commands.Register(new Command_NegRep());
+		this.commands.Register(new Command_CheckRep());
 		this.commands.Register(new Command_Help());
 		this.commands.Register(new Command_Uptime());
 		this.commands.Register(new Command_Version());

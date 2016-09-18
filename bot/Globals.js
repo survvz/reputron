@@ -20,6 +20,7 @@
 	// Commands
 	Command_AddRep     = require("./commands/AddRep");
 	Command_NegRep     = require("./commands/NegRep");
+	Command_CheckRep   = require("./commands/CheckRep");
 	Command_Help       = require("./commands/Help");
 	Command_Uptime     = require("./commands/Uptime");
 	Command_Version    = require("./commands/Version");
