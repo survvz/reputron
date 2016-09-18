@@ -1,0 +1,37 @@
+require("../Globals");
+
+/**
+ * Description
+ * @extends {command}
+ */
+class CommandName extends Command
+{
+	constructor()
+	{
+		// Helptext values
+		let desc  = ``;
+		let alias = ``;
+		let usage = ``;
+		let help  = ``;
+
+		// Activation command regex
+		let command = /^$/;
+
+		/**
+		 * Action to take when the command is received
+		 * @param  {object} message message object passed by parent caller
+		 * @param  {method} resolve resolve method of parent Promise
+		 * @param  {method} reject reject method of parent Promise
+		 * @returns {null}
+		 */
+		let action = (message, resolve, reject) =>
+		{
+
+		}
+
+		// Pass params to parent constructor
+		super(command, action, desc, usage, help, alias);
+	}
+}
+
+module.exports = CommandName;
