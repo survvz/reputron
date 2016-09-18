@@ -14,7 +14,7 @@ class Update extends Command
 		// and don't need helptext fields
 
 		// Activation command regex
-		var command = /^update$/;
+		var command = /^rep update$/;
 
 		/**
 		 * Action to take when the command is received

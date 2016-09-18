@@ -11,11 +11,11 @@ class Version extends Command
 	{
 		// Helptext values
 		let desc  = `Print the current version of the bot`;
-		let usage = `${settings.prefix}version`;
+		let usage = `rep version`;
 		let help  = `The version command will print the current version of the bot to the channel the command was called from.`;
 
 		// Activation command regex
-		var command = /^version$/;
+		var command = /^rep version$/;
 
 		/**
 		 * Action to take when the command is received

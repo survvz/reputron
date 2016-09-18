@@ -11,11 +11,11 @@ class Uptime extends Command
 	{
 		// Helptext values
 		let desc  = `Print the time since the bot was started`;
-		let usage = `${settings.prefix}uptime`;
+		let usage = `rep uptime`;
 		let help  = `The uptime command will print the time since the bot was started to the channel the command was called from.`;
 
 		// Activation command regex
-		var command = /^uptime$/;
+		var command = /^rep uptime$/;
 
 		/**
 		 * Action to take when the command is received
