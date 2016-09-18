@@ -9,8 +9,8 @@ class AddRep extends Command
 	constructor()
 	{
 		// Helptext values
+		let name  = `++rep`;
 		let desc  = `Give a user +1 rep`;
-		let alias = `++rep`;
 		let usage = `++rep <@user> [reason]`;
 		let help  = ``;
 
@@ -26,8 +26,10 @@ class AddRep extends Command
 		 */
 		let action = (message, resolve, reject) =>
 		{
-			let userid = message.mentions.users.array()[0] ?
-				message.mentions.users.array()[0].id : undefined || message.author.id;
+			let mention = message.mentions.users.array()[0];
+			let userid = mention ? mention.id : undefined || message.author.id;
+			let userRaw = mention ? `${mention.username}#${mention.discriminator}` :
+					undefined || `${message.author.username}#${message.author.discriminator}`;
 			let text = message.content.match(this.command)[1];
 
 			// If user tries to rep themselves
@@ -56,6 +58,7 @@ class AddRep extends Command
 			let template =
 			{
 				id: userid,
+				raw: userRaw,
 				goodrep: 1,
 				badrep: 0,
 				reps: [repsTemplate]
@@ -114,7 +117,7 @@ class AddRep extends Command
 
 					// Notify user of successful rep;
 					message.channel.sendMessage(
-						`${message.author.username}#${message.author.discriminator} gave +1 rep to ${user.username}#${user.discriminator}`)
+						`${message.author.username}#${message.author.discriminator} gave +1 rep to ${user.raw}`)
 							.then(message =>
 							{
 								message.delete(5 * 1000);
@@ -141,7 +144,7 @@ class AddRep extends Command
 		}
 
 		// Pass params to parent constructor
-		super(command, action, desc, usage, help, alias);
+		super(command, action, name, desc, usage, help);
 	}
 }
 

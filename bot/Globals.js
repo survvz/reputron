@@ -12,18 +12,18 @@
 	Bot    = require("./lib/Bot");
 
 	// My lib classes
-	ScheduledTask         = require("./lib/ScheduledTask");
-	Scheduler             = require("./lib/Scheduler");
-	Command               = require("./lib/Command");
-	CommandRegistry       = require("./lib/CommandRegistry");
+	ScheduledTask   = require("./lib/ScheduledTask");
+	Scheduler       = require("./lib/Scheduler");
+	Command         = require("./lib/Command");
+	CommandRegistry = require("./lib/CommandRegistry");
 
 	// Commands
-	Command_AddRep     = require("./commands/AddRep");
-	Command_NegRep     = require("./commands/NegRep");
-	Command_CheckRep   = require("./commands/CheckRep");
-	Command_Help       = require("./commands/Help");
-	Command_Uptime     = require("./commands/Uptime");
-	Command_Version    = require("./commands/Version");
+	Command_AddRep   = require("./commands/AddRep");
+	Command_NegRep   = require("./commands/NegRep");
+	Command_CheckRep = require("./commands/CheckRep");
+	Command_Help     = require("./commands/Help");
+	Command_Uptime   = require("./commands/Uptime");
+	Command_Version  = require("./commands/Version");
 
 	// Admin commands
 	Command_Update = require("./commands/Update");
@@ -31,12 +31,12 @@
 	// Tasks
 
 	// Static classes
-	Time           = require("./lib/Time");
+	Time = require("./lib/Time");
 
 	// Node Modules
-	JsonDB    = require("../node_modules/node-json-db");
-	colors    = require("../node_modules/colors");
-	inspect   = require("../node_modules/util").inspect;
+	JsonDB  = require("../node_modules/node-json-db");
+	colors  = require("../node_modules/colors");
+	inspect = require("../node_modules/util").inspect;
 
 
 // End class imports ///////////////////////////////////////////////////////////

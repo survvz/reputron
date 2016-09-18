@@ -2,7 +2,8 @@ require("../Globals");
 
 /**
  * Admin command to remotely shut down the bot and pull updates.
- * The bot will automatically restart after updating.
+ * The bot will automatically restart after updating. Must be sent
+ * in a DM
  * Call with /update
  * @extends {command}
  */

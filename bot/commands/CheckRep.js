@@ -9,10 +9,10 @@ class CheckRep extends Command
 	constructor()
 	{
 		// Helptext values
+		let name  = `??rep`;
 		let desc  = `Check rep for the provided user, or yourself`;
-		let alias = `??rep`;
 		let usage = `??rep [@user]`;
-		let help  = `To check your own rep, don't mention any user in the command.`;
+		let help  = `To check your own rep, dont mention any user in the command.`;
 
 		// Activation command regex
 		let command = /^\?\?rep(?: (.+))?$/;
@@ -85,7 +85,7 @@ class CheckRep extends Command
 		}
 
 		// Pass params to parent constructor
-		super(command, action, desc, usage, help, alias);
+		super(command, action, name, desc, usage, help);
 	}
 }
 

@@ -13,20 +13,19 @@ class Command
 	 * @param {method} action action that will be executed
 	 *                        Action must receive the message object as well as
 	 *                        the Promise resolve and reject methods when created
+	 * @param {string} name   helptext name of the command
 	 * @param {string} desc   helptext description of command
 	 * @param {string} usage  helptext usage of command
 	 * @param {string} help   helptext additional information about command
-	 * @param {string} alias  helptext optional alias, does not need to be defined
-	 *                        or passed to super at class creation
 	 */
-	constructor(command, action, desc, usage, help, alias)
+	constructor(command, action, name, desc, usage, help)
 	{
 		this.command = command;
 		this.action = action;
+		this.name = name;
 		this.desc = desc;
 		this.usage = usage;
 		this.help = help;
-		this.alias = alias;
 	}
 
 	/**

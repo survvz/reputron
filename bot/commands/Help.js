@@ -10,13 +10,14 @@ class Help extends Command
 	constructor()
 	{
 		// Helptext values
+		let name  = `rep help`;
 		let desc  = "Provides the user with a list of commands and what they do";
-		let usage = `\n\t${settings.prefix}help\n\t${settings.prefix}help <command>`;
-		let help  = `${settings.prefix}help will list available commands.
-${settings.prefix}help <command> will print the helptext for the given command.`;
+		let usage = `\n\trep help\n\trep help <command>`;
+		let help  = `rep help will list available commands.
+rep help <command> will print the helptext for the given command.`;
 
 		// Activation command regex
-		let command = /^help(?: (.+))?$/;
+		let command = /^rep help(?: (.+))?$/;
 
 		/**
 		 * Action to take when the command is received
@@ -48,9 +49,13 @@ ${settings.prefix}help <command> will print the helptext for the given command.`
 					if (!cmd.admin)
 						helptext += `${Pad(key.toLowerCase(), maxWidth + 1)}: ${cmd.desc}\n`;
 				});
-				helptext += `\nUse "${settings.prefix}help <command>" for more command information.` + "\n```"
+				helptext += `\nUse "rep help <command>" for more command information.` + "\n```"
 
-				message.channel.sendMessage(helptext);
+				// Send helptext to the channel
+				message.channel.sendMessage(helptext).then(message =>
+				{
+					message.delete(15 * 1000);
+				});
 			}
 			else
 			{
@@ -63,7 +68,11 @@ ${settings.prefix}help <command> will print the helptext for the given command.`
 				message.channel.sendMessage(
 					`\`\`\`xl\nDescription: ${cmd.desc}` +
 					`${cmd.alias ? "\nAlias: " + cmd.alias : ""}\n` +
-					`Usage: ${cmd.usage}\n\n${cmd.help}\n\`\`\``);
+					`Usage: ${cmd.usage}\n\n${cmd.help}\n\`\`\``)
+						.then(message =>
+						{
+							message.delete(15 * 1000);
+						});
 			}
 
 			// Pad the right side of a string with spaces
@@ -75,7 +84,7 @@ ${settings.prefix}help <command> will print the helptext for the given command.`
 		}
 
 		// Pass params to parent constructor
-		super(command, action, desc, usage, help);
+		super(command, action, name, desc, usage, help);
 	}
 }
 

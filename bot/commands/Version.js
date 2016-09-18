@@ -2,7 +2,6 @@ require("../Globals");
 
 /**
  * Command to have the bot print its current version to the chat
- * Call with /version
  * @extends {command}
  */
 class Version extends Command
@@ -10,6 +9,7 @@ class Version extends Command
 	constructor()
 	{
 		// Helptext values
+		let name  = `rep version`;
 		let desc  = `Print the current version of the bot`;
 		let usage = `rep version`;
 		let help  = `The version command will print the current version of the bot to the channel the command was called from.`;
@@ -35,7 +35,7 @@ class Version extends Command
 		}
 
 		// Pass params to parent constructor
-		super(command, action, desc, usage, help);
+		super(command, action, name, desc, usage, help);
 	}
 }
 

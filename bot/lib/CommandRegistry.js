@@ -15,24 +15,24 @@ class CommandRegistry extends Array
 		this.bot = bot;
 		this.info = {};
 
+		// Handle execution of commands
 		this.bot.on("message", (message) =>
 		{
 			// Not a command, break
-			// if (message.content[0] != settings.prefix) return;
+			if (!message.content.startsWith("??rep") &&
+				!message.content.startsWith("++rep") &&
+				!message.content.startsWith("--rep") &&
+				!message.content.startsWith("rep")) return;
 
 			// Prevent bot messages triggering commands
 			if (message.author.bot) return;
 
-			// admin only
-			if (message.author.id !== settings.admin) return;
-
-			// Get everything after prefex from command
-			// let command = message.content.slice(settings.prefix.length);
-			// message.content = command;
-			let command = message.content;
+			// Respond only to admin's commands
+			// if (message.author.id !== settings.admin) return;
 
 			// Check for command matches and execute the
 			// appropriate command action
+			let command = message.content;
 			this.forEach( (item) =>
 			{
 				if (item instanceof Command)
@@ -63,7 +63,7 @@ class CommandRegistry extends Array
 	{
 		command.Register(this.bot);
 		this.push(command);
-		this.info[command.constructor.name.toLowerCase()] =
+		this.info[command.name] =
 		{
 			desc: command.desc,
 			usage: command.usage,
