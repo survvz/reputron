@@ -1,5 +1,5 @@
 # ReputronZ
- ReputronZ is a parallel rewrite of a Discord Bot, written by [YorkAARGH](https://github.com/YorkAARGH/) and I, based on features from a bot written by Discord user Gus#0291, designed to give users the ability to contribute to eachother's reputation -- either positively or negatively -- creating a feedback system for user actions.
+ ReputronZ is a parallel rewrite of a Discord Bot, written by [YorkAARGH](https://github.com/YorkAARGH/) and I, based on features from a bot written by Discord user [Gus#0291](https://github.com/guscaplan/), designed to give users the ability to contribute to eachother's reputation -- either positively or negatively -- creating a feedback system for user actions.
 
 
 The original Reputron can be found [here](https://github.com/YorkAARGH/Reputron).
