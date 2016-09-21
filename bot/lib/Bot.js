@@ -72,7 +72,7 @@ class Bot extends Client
 				});
 			}
 
-			this.user.setStatus("online", "Try 'rep help'")
+			this.user.setStatus("online", "Try rep help")
 				.then(user => this.Say(
 					`Status set to: ${user.status}, ${user.game.name}`))
 				.catch(this.Say);
