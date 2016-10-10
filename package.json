@@ -1,18 +1,10 @@
 {
-	"name": "ReputronZ",
-	"version": "1.0.0",
-	"description": "A bot for giving rep to and tracking rep for users on a server.",
-	"author": "Zackary Campbell <zajrik@gmail.com>",
-	"scripts": {
-		"main": "node bot/main",
-		"update": "git pull"
-	},
-	"main": "bot/main.js",
-	"dependencies": {
-		"discord.js": "9.2.0",
-		"node-json-db": "*",
-		"colors": "*",
-		"util": "*"
-	},
-	"private": true
+  "name": "ReputronZ",
+  "version": "2.0.0",
+  "description": "A bot for giving rep to and tracking rep for users on a server.",
+  "author": "Zackary Campbell <zajrik@gmail.com>",
+  "main": "bot",
+  "dependencies": {
+    "yamdbf": "^2.0.10"
+  }
 }

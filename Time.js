@@ -1,5 +1,3 @@
-// Extend the Date class to provide helper methods
-
 /**
  * Extend the Date class to provided helper methods
  * @extends {Date}
