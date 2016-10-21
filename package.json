@@ -5,6 +5,6 @@
   "author": "Zackary Campbell <zajrik@gmail.com>",
   "main": "bot",
   "dependencies": {
-    "yamdbf": "^2.0.10"
+    "yamdbf": "^2.2.0"
   }
 }

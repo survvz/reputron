@@ -15,6 +15,7 @@ const bot = new Bot({
 		'enablegroup',
 		'listgroups',
 		'version',
+		'ping',
 		'reload'
 	]
 }).start();
