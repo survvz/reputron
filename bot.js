@@ -20,6 +20,8 @@ const bot = new Bot({
 	]
 }).start();
 
+bot.on('disconnect', () => process.exit());
+
 bot.setDefaultSetting('prefix', '');
 bot.repTemplate = {
 	goodrep: 0,
